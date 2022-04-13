@@ -45,11 +45,15 @@ export default function ExportComponent() {
 								return (
 									<tr
 										key={song}
-										className="border-y text-lg bg-gray-100 text-black border-slate-700 font-sans group hover:bg-slate-500 hover:text-white transition ease-in duration-50"
+										className="border-y text-lg cursor-pointer bg-gray-100 text-black border-slate-700 font-sans group hover:bg-slate-500 hover:text-white transition ease-in duration-50"
 									>
-										<th className=" p-1">{username}</th>
-										<th className=" p-1">{song}</th>
-										<th className=" p-1">{artist}</th>
+										<th className="p-1">
+											<input placeholder={username} 
+                                            className="text-black"
+                                            value={username}/>
+										</th>
+										<th className="p-1">{song}</th>
+										<th className="p-1">{artist}</th>
 										<th className="p-1">{rating}</th>
 									</tr>
 								);
