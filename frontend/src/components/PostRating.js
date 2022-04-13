@@ -17,6 +17,20 @@ export default function PostRating() {
 		//check data
 		console.log("Submit res form:", res);
 
+		axios
+			.post("http://127.0.0.1:8000/api/ratings", {
+				username: "phearom",
+				song: "music title",
+				artist: "artist",
+				rating: 5,
+			})
+			.then(function (response) {
+				console.log(response);
+			})
+			.catch(function (error) {
+				console.log(error);
+			});
+
 		setSubmit(true);
 	};
 
@@ -45,7 +59,7 @@ export default function PostRating() {
 	};
 
 	return (
-		<div className="min-h-screen bg-slate-800">
+		<div className="">
 			<div className="text-3xl font-bold text-center text-white pt-20 pb-2">
 				Create Rating
 			</div>
