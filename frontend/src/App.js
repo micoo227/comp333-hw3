@@ -1,16 +1,21 @@
-import logo from "./logo.svg";
 import "tailwindcss/tailwind.css";
 import "./App.css";
-import PostRating from "./components/PostRating";
-import GetRating from "./components/GetRatings";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+import Home from "./Home";
+import Signup from "./Signup";
+import Login from "./Login";
 
 function App() {
-	return (
-		<div className="grid grid-cols-1 lg:grid-cols-2 min-h-screen bg-slate-800">
-			<PostRating />
-			<GetRating />
-		</div>
-	);
+    return (
+        <BrowserRouter>
+            <Routes>
+                <Route exact path="/" element={<Home />}></Route>
+                <Route exact path="/signup" element={<Signup />}></Route>
+                <Route exact path="/login" element={<Login />}></Route>
+            </Routes>
+        </BrowserRouter>
+    );
 }
 
 export default App;

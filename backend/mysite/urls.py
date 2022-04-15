@@ -18,8 +18,9 @@ from django.urls import path, include
 from rest_framework import routers
 from music import views
 
-router = routers.DefaultRouter()
+router = routers.DefaultRouter(trailing_slash=False)
 router.register(r'ratings', views.RatingView, 'rating')
+router.register(r'registration', views.RegisterView, 'register')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
